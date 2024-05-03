@@ -7,7 +7,7 @@
 </script>
 
 <main class="bg-primary">
-	<div class="content overflow-x-hidden">
+	<div class="content relative overflow-x-visible">
 		<Header></Header>
 
 		{@render children()}
