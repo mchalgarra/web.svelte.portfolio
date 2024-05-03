@@ -20,7 +20,7 @@
 	}
 </script>
 
-<div class="flex items-center justify-between px-6 md:px-10 header z-20">
+<div class="flex absolute items-center justify-between px-6 md:px-10 header z-20">
 	{#each SECTIONS as section, index}
 		<button
 			class:active={currentSection.name === section.name}
