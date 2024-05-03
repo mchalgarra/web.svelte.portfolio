@@ -2,8 +2,9 @@
 	import { SECTIONS } from '../../constants/sections.constant';
 	import Logo from '../icons/Logo.svelte';
 	import Drawer from './Drawer.svelte';
+	import { CurrentSection } from './current-section.svelte';
 
-	let { activeSection = 'About' } = $props();
+	const currentSection = new CurrentSection();
 
 	let drawer = $state(false);
 	let drawerMounted = $state(false);
@@ -12,19 +13,25 @@
 		drawer = !drawer;
 		drawerMounted = true;
 	}
+
+	function handleLogoClick() {
+		currentSection.name = 'About';
+		drawer = false;
+	}
 </script>
 
 <div class="flex items-center justify-between px-6 md:px-10 header z-20">
 	{#each SECTIONS as section, index}
 		<button
-			class:active={activeSection === section.name}
+			class:active={currentSection.name === section.name}
 			class="section flex w-1/6 items-center justify-center h-fit py-3 text-white text-md text-light font-medium uppercase hover:text-accent hover:scale-105 transition-all"
+			onclick={() => (currentSection.name = section.name)}
 		>
 			{section.name}
 		</button>
 
 		{#if index === 2}
-			<a href="/" class="hover:scale-105 transition-all">
+			<a href="/" class="hover:scale-105 transition-all" onclick={handleLogoClick}>
 				<div>
 					<Logo />
 				</div>
@@ -40,7 +47,7 @@
 </div>
 
 {#if drawerMounted}
-	<Drawer show={drawer} />
+	<Drawer show={drawer} onclose={() => (drawer = false)} />
 {/if}
 
 <style lang="scss">

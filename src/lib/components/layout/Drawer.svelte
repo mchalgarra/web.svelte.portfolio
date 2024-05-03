@@ -1,12 +1,20 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { SECTIONS } from '../../constants/sections.constant';
+	import type { ISection } from '../../interfaces/section.interface';
 	import Chevron from '../icons/Chevron.svelte';
 	import MemphiDashedCircle from '../memphis/MemphiDashedCircle.svelte';
 	import MemphiTwoLineDots from '../memphis/MemphiTwoLineDots.svelte';
+	import { CurrentSection } from './current-section.svelte';
 
-	let activeIndex = $state(SECTIONS.findIndex((section) => section.active));
+	interface IProps {
+		show: boolean;
+		onclose: () => void;
+	}
 
-	let { show = false } = $props();
+	const currentSection = new CurrentSection();
+
+	let { show = false, onclose }: IProps = $props();
 
 	let _drawer: HTMLDivElement;
 	let _elements: HTMLElement[] = [];
@@ -16,7 +24,8 @@
 	let top = $state(0);
 
 	$effect(() => {
-		const element = _elements[activeIndex];
+		const index = SECTIONS.findIndex((section) => section.name === currentSection.name);
+		const element = _elements[index];
 
 		if (!element) return;
 
@@ -120,6 +129,13 @@
 			easing: 'ease'
 		});
 	}
+
+	function setSection(section: ISection) {
+		currentSection.name = section.name;
+		goto(`#${section.name}`);
+
+		onclose();
+	}
 </script>
 
 <div bind:this={_drawer} class="drawer absolute w-screen h-screen bg-drawer overflow-hidden z-10">
@@ -127,9 +143,9 @@
 		{#each SECTIONS as section, index (section.name)}
 			<button
 				bind:this={_elements[index]}
-				class:active={section.active}
+				class:active={section.name === currentSection.name}
 				class="section w-full p-2 text-4xl text-100 font-medium uppercase transition-all"
-				onclick={() => (activeIndex = index)}
+				onclick={() => setSection(section)}
 			>
 				{section.name}
 			</button>
@@ -159,9 +175,9 @@
 		<MemphiDashedCircle className="z-0 top-[77px] right-[-55px] w-28 h-28 text-accent opacity-70" />
 		<MemphiTwoLineDots className="z-0 bottom-[60px] left-[-37px] w-32 h-4 text-accent opacity-70" />
 
-		<div class="absolute z-0 top-0 left-0 h-full text-accent opacity-50 pointer-events-none">
+		<div class="absolute z-0 top-0 left-0 h-full text-accent pointer-events-none">
 			<svg
-				class="w-full h-full"
+				class="w-full h-full text-accent"
 				width="359"
 				height="881"
 				viewBox="0 0 359 881"
@@ -171,7 +187,7 @@
 				<path
 					opacity="0.7"
 					d="M-59 0.5C-59 0.5 68.9568 142.752 72.5 227C77.1133 336.693 5.5527 453.225 -20 560C-65.3586 749.536 205.373 848.414 358 903"
-					stroke="#A6D590"
+					stroke="currentColor"
 					stroke-opacity="0.7"
 				/>
 			</svg>

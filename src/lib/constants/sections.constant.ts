@@ -5,33 +5,21 @@ import type { ISection } from '../interfaces/section.interface';
  */
 export const SECTIONS: ISection[] = [
 	{
-		name: 'About',
-		path: '/',
-		active: true
+		name: 'About'
 	},
 	{
-		name: 'Work',
-		path: '/work',
-		active: false
+		name: 'Work'
 	},
 	{
-		name: 'Skills',
-		path: '/skills',
-		active: false
+		name: 'Skills'
 	},
 	{
-		name: 'Experience',
-		path: '/experience',
-		active: false
+		name: 'Experience'
 	},
 	{
-		name: 'Contact',
-		path: '/contact',
-		active: false
+		name: 'Contact'
 	},
 	{
-		name: 'Resume',
-		path: '/resume',
-		active: false
+		name: 'Resume'
 	}
 ];
