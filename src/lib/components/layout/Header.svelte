@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { SECTIONS } from '../../constants/sections.constant';
+	import type { ISection } from '../../interfaces/section.interface';
 	import Logo from '../icons/Logo.svelte';
 	import Drawer from './Drawer.svelte';
 	import { CurrentSection } from './current-section.svelte';
@@ -8,6 +10,12 @@
 
 	let drawer = $state(false);
 	let drawerMounted = $state(false);
+
+	let scrollY = $state(0);
+	let innerHeight = $state(0);
+
+	let _header: HTMLDivElement;
+	let _bg: HTMLDivElement;
 
 	function toggleDrawer() {
 		drawer = !drawer;
@@ -18,32 +26,74 @@
 		currentSection.name = 'About';
 		drawer = false;
 	}
+
+	function setSection(section: ISection) {
+		currentSection.name = section.name;
+		goto(`#${section.name}`);
+	}
+
+	$effect(() => {
+		if (drawer) {
+			_header.style.backdropFilter = 'blur(0)';
+			_bg.style.opacity = '0';
+		} else {
+			setTimeout(() => {
+				if (!drawer) {
+					let blur = window.scrollY / window.innerHeight;
+					blur = Math.max(Math.min(blur * 8, 8), 0);
+
+					let opacity = window.scrollY / window.innerHeight;
+					opacity = Math.max(Math.min(opacity * 2, 0.8), 0);
+
+					_header.style.backdropFilter = `blur(${blur}px)`;
+					_bg.style.opacity = `${opacity}`;
+				}
+			}, 1000);
+		}
+	});
 </script>
 
-<div class="flex absolute items-center justify-between px-6 md:px-10 header z-20">
-	{#each SECTIONS as section, index}
-		<button
-			class:active={currentSection.name === section.name}
-			class="section flex w-1/6 items-center justify-center h-fit py-3 text-white text-md text-light font-medium uppercase hover:text-accent hover:scale-105 transition-all"
-			onclick={() => (currentSection.name = section.name)}
-		>
-			{section.name}
-		</button>
+<svelte:window bind:innerHeight onscroll={() => (scrollY = window.scrollY)} />
 
-		{#if index === 2}
-			<a href="/" class="hover:scale-105 transition-all" onclick={handleLogoClick}>
-				<div>
-					<Logo />
-				</div>
-			</a>
-		{/if}
-	{/each}
+<div
+	bind:this={_header}
+	class:collapsed={innerHeight && scrollY > innerHeight / 2 - 160}
+	class="flex fixed top-0 items-center justify-center header z-20"
+>
+	<div
+		bind:this={_bg}
+		class="background absolute top-0 left-0 w-full h-full bg-primary z-[-1]"
+	></div>
 
-	<button class:active={drawer} class="drawer" onclick={toggleDrawer}>
-		{#each Array(3) as _}
-			<div class="transition-all"></div>
+	<div class="flex items-center justify-between w-full h-full max-w-[1240px] px-6 md:px-10">
+		{#each SECTIONS as section, index}
+			<button
+				class:active={currentSection.name === section.name}
+				class="section flex w-1/6 items-center justify-center h-fit py-3 text-white text-md text-light font-medium uppercase hover:text-accent hover:scale-105 transition-all"
+				onclick={() => setSection(section)}
+			>
+				{section.name}
+			</button>
+
+			{#if index === 2}
+				<a
+					href="/"
+					class="flex items-center justify-center hover:scale-105 transition-all"
+					onclick={handleLogoClick}
+				>
+					<div>
+						<Logo />
+					</div>
+				</a>
+			{/if}
 		{/each}
-	</button>
+
+		<button class:active={drawer} class="drawer" onclick={toggleDrawer}>
+			{#each Array(3) as _}
+				<div class="transition-all"></div>
+			{/each}
+		</button>
+	</div>
 </div>
 
 {#if drawerMounted}
@@ -58,6 +108,30 @@
 
 		width: 100%;
 		height: 10rem;
+
+		transition: height 0.2s ease;
+
+		& > .background {
+			opacity: 0;
+		}
+
+		@media (min-width: 660px) {
+			&.collapsed {
+				height: 5.5rem;
+
+				& a {
+					transform: scale(0.7);
+
+					&:hover {
+						transform: scale(0.75);
+					}
+				}
+			}
+		}
+
+		@media (min-width: 790px) {
+			height: 6.25rem;
+		}
 	}
 
 	a {
@@ -190,18 +264,18 @@
 	@media (max-width: 659px) {
 		.header {
 			height: 5rem;
-		}
 
-		a {
-			width: 2rem;
-		}
+			& a {
+				width: 2rem;
+			}
 
-		button.section {
-			display: none;
-		}
+			& button.section {
+				display: none;
+			}
 
-		button.drawer {
-			display: flex;
+			& button.drawer {
+				display: flex;
+			}
 		}
 	}
 </style>

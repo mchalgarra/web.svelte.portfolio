@@ -33,8 +33,16 @@
 	});
 
 	$effect(() => {
-		if (show) enterAnimation();
-		else leaveAnimation();
+		if (show) {
+			document.body.style.overflow = 'hidden';
+			enterAnimation();
+		} else {
+			leaveAnimation();
+
+			setTimeout(() => {
+				if (!show) document.body.style.overflow = 'unset';
+			}, 1000);
+		}
 	});
 
 	function enterAnimation() {
@@ -88,7 +96,7 @@
 
 	function leaveAnimation() {
 		_indicator.animate([{ opacity: 1 }, { opacity: 0 }], {
-			duration: 200,
+			duration: 400,
 			fill: 'forwards',
 			easing: 'ease'
 		});
@@ -138,7 +146,11 @@
 	}
 </script>
 
-<div bind:this={_drawer} class="drawer absolute w-screen h-screen bg-drawer overflow-hidden z-10">
+<div
+	bind:this={_drawer}
+	class:visible={show}
+	class="drawer fixed w-screen h-screen bg-drawer overflow-hidden z-10"
+>
 	<div class="content relative flex flex-col justify-center items-center gap-6 w-full h-full p-6">
 		{#each SECTIONS as section, index (section.name)}
 			<button

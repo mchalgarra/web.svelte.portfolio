@@ -6,9 +6,9 @@
 	let { children }: { children: Snippet } = $props();
 </script>
 
-<main class="bg-primary">
+<main class="bg-primary min-h-screen">
 	<div class="content relative overflow-x-visible">
-		<Header></Header>
+		<Header />
 
 		{@render children()}
 	</div>
@@ -20,7 +20,7 @@
 		justify-content: center;
 
 		width: 100vw;
-		height: 100vh;
+		min-height: 100vh;
 
 		box-sizing: border-box;
 
@@ -34,7 +34,6 @@
 			align-items: center;
 
 			width: 100%;
-			height: 100%;
 			max-width: 77.5rem;
 		}
 	}
