@@ -17,21 +17,18 @@ export default {
 				drawer: '#402A9B'
 			},
 			textColor: {
-				primary: '#B5B3FF',
-				accent: '#A6D590',
-				highlight: '#669EFF',
 				100: '#E6E5FF',
 				200: '#B2B1C7',
 				300: '#858395',
 				light: '#C4C2F0',
 				inverted: '#18141F'
+			},
+			colors: {
+				primary: '#B5B3FF',
+				accent: '#A6D590',
+				highlight: '#669EFF',
+				shade: '#402A9B'
 			}
-		},
-		colors: {
-			primary: '#B5B3FF',
-			accent: '#A6D590',
-			highlight: '#669EFF',
-			shade: '#402A9B'
 		}
 	},
 	plugins: []

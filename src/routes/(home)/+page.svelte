@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Home from './components/Home.svelte';
+	import Logos from './components/Logos.svelte';
 
 	onMount(() => {
 		handleScroll();
@@ -33,6 +34,8 @@
 
 <div class="home-page relative min-h-screen w-full flex flex-col overflow-visible items-center">
 	<Home />
+
+	<Logos />
 
 	<div class="min-h-screen h-screen w-full"></div>
 </div>
