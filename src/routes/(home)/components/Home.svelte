@@ -33,9 +33,9 @@
 	</div>
 
 	<button
-		class="absolute bottom-6 sm:bottom-16 w-9 h-12"
+		class="absolute bottom-6 sm:bottom-12 w-9 h-12"
 		onclick={() => {
-			window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+			window.scrollTo({ top: window.innerHeight + 128, behavior: 'smooth' });
 		}}
 	>
 		<ScrollIcon className="w-full h-full text-primary opacity-50" />
