@@ -130,7 +130,9 @@
 		}
 
 		@media (min-width: 790px) {
-			height: 6.25rem;
+			&.collapsed {
+				height: 6.25rem;
+			}
 		}
 	}
 
