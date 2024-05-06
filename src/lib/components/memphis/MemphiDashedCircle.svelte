@@ -1,6 +1,4 @@
 <script lang="ts">
-	import type { IMemphi } from '../../interfaces/memphi.interface';
-
 	interface IProps {
 		className?: string;
 	}
