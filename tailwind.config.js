@@ -28,6 +28,9 @@ export default {
 				accent: '#A6D590',
 				highlight: '#669EFF',
 				shade: '#402A9B'
+			},
+			borderColor: {
+				inverted: '#18141F'
 			}
 		}
 	},
