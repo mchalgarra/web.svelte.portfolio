@@ -58,7 +58,7 @@
 <div
 	bind:this={_header}
 	class:collapsed={innerHeight && scrollY > innerHeight / 2 - 160}
-	class="flex fixed top-0 items-center justify-center header z-20"
+	class="flex fixed top-0 items-center justify-center header z-20 w-full"
 >
 	<div
 		bind:this={_bg}

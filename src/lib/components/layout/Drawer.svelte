@@ -35,12 +35,16 @@
 	$effect(() => {
 		if (show) {
 			document.body.style.overflow = 'hidden';
+			document.documentElement.style.overflow = 'hidden';
 			enterAnimation();
 		} else {
 			leaveAnimation();
 
 			setTimeout(() => {
-				if (!show) document.body.style.overflow = 'unset';
+				if (!show) {
+					document.body.style.overflow = '';
+					document.documentElement.style.overflow = '';
+				}
 			}, 1000);
 		}
 	});

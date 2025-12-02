@@ -3,6 +3,7 @@
 	import Home from './components/Home.svelte';
 	import Logos from './components/Logos.svelte';
 	import Experiences from './components/Experiences.svelte';
+	import MainSkills from './components/MainSkills.svelte';
 
 	onMount(() => {
 		handleScroll();
@@ -37,6 +38,8 @@
 	<Home />
 
 	<Logos />
+
+	<MainSkills />
 
 	<Experiences />
 
