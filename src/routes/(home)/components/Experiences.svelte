@@ -11,7 +11,7 @@
 			{#if index !== 0}
 				<div class="w-4/5 mx-auto h-px bg-white/10 md:hidden"></div>
 			{/if}
-			<ExperienceCard data={exp}></ExperienceCard>
+			<ExperienceCard data={exp} last={index === EXPERIENCES.length - 1}></ExperienceCard>
 		{/each}
 	</div>
 </div>

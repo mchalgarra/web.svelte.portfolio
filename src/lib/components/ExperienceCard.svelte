@@ -3,10 +3,11 @@
 	import type { IExperience } from '$lib/interfaces/experience.interface';
 
 	interface IProps {
+		last?: boolean;
 		data: IExperience;
 	}
 
-	const { data }: IProps = $props();
+	const { last = false, data }: IProps = $props();
 </script>
 
 <div class="flex w-full gap-8 max-md:flex-col">
@@ -21,7 +22,11 @@
 			<div class="h-6 w-6 bg-accent rounded-full border-4 border-inverted max-md:hidden"></div>
 		</div>
 
-		<div class="absolute top-20 right-5 w-px h-[calc(100%-3rem)] bg-white/10 max-md:hidden"></div>
+		<div
+			class="absolute top-20 right-5 w-px h-[calc(100%-3rem)] bg-white/10 max-md:hidden {last
+				? 'hidden'
+				: ''}"
+		></div>
 	</div>
 
 	<div class="flex flex-col gap-4 pt-1 max-md:pt-0 max-md:px-4">
