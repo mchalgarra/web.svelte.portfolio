@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { className = '', shadowColor = '##788795', accentColor = '#35D32F' } = $props();
+	let { className = '', shadowColor = '#788795', accentColor = '#35D32F' } = $props();
 </script>
 
 <svg
