@@ -20,3 +20,6 @@ export * from './memphis/MemphiTwoLineDots.svelte';
 // Layout
 export * from './layout/Drawer.svelte';
 export * from './layout/Header.svelte';
+
+// Other components
+export * from './ExperienceCard.svelte';

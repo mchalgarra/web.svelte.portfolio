@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import Home from './components/Home.svelte';
 	import Logos from './components/Logos.svelte';
+	import Experiences from './components/Experiences.svelte';
 
 	onMount(() => {
 		handleScroll();
@@ -36,6 +37,8 @@
 	<Home />
 
 	<Logos />
+
+	<Experiences />
 
 	<div class="min-h-screen h-screen w-full"></div>
 </div>
