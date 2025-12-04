@@ -4,6 +4,7 @@
 	import Logos from './components/Logos.svelte';
 	import Experiences from './components/Experiences.svelte';
 	import MainSkills from './components/MainSkills.svelte';
+	import Resume from './components/Resume.svelte';
 
 	onMount(() => {
 		handleScroll();
@@ -30,9 +31,37 @@
 			header.classList.remove('collapsed');
 		}
 	}
+
+	function handleMouseMove(event: MouseEvent) {
+		const { clientX: x, clientY: y } = event;
+
+		// Get memphis elements
+
+		const memphisElements = document.querySelectorAll<HTMLElement>('.memphi');
+		if (memphisElements.length === 0) return;
+
+		// Move memphis
+		memphisElements.forEach((element) => {
+			const el = element.querySelector('svg');
+			if (!el) return;
+
+			let dx = x / 100;
+			let dy = y / 100;
+
+			const isInverted = element.classList.contains('inverted');
+			if (isInverted) {
+				dx = -dx;
+				dy = -dy;
+			}
+
+			el.style.transform = `translate(${dx}px, ${dy}px)`;
+		});
+	}
 </script>
 
 <svelte:window onscroll={handleScroll} />
+
+<svelte:body onmousemove={handleMouseMove} />
 
 <div class="home-page relative min-h-screen w-full flex flex-col overflow-visible items-center">
 	<Home />
@@ -42,6 +71,8 @@
 	<MainSkills />
 
 	<Experiences />
+
+	<Resume />
 
 	<div class="min-h-screen h-screen w-full"></div>
 </div>
