@@ -37,7 +37,7 @@
 
 		// Get memphis elements
 
-		const memphisElements = document.querySelectorAll<HTMLElement>('.memphi');
+		const memphisElements = document.querySelectorAll<HTMLElement>('.memphi:not(.ignore-movement)');
 		if (memphisElements.length === 0) return;
 
 		// Move memphis
@@ -73,8 +73,6 @@
 	<Experiences />
 
 	<Resume />
-
-	<div class="min-h-screen h-screen w-full"></div>
 </div>
 
 <style lang="scss">

@@ -2,15 +2,18 @@
 	import '../app.scss';
 	import type { Snippet } from 'svelte';
 	import Header from '../lib/components/layout/Header.svelte';
+	import Footer from '../lib/components/layout/Footer.svelte';
 
 	let { children }: { children: Snippet } = $props();
 </script>
 
-<main class="bg-primary min-h-screen">
+<main class="bg-primary min-h-screen overflow-hidden">
 	<div class="content relative overflow-x-visible">
 		<Header />
 
 		{@render children()}
+
+		<Footer />
 	</div>
 </main>
 
