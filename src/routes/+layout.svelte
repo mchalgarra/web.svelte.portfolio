@@ -6,7 +6,7 @@
 	let { children }: { children: Snippet } = $props();
 </script>
 
-<main class="bg-primary min-h-screen">
+<main class="bg-primary min-h-screen overflow-hidden">
 	<div class="content relative overflow-x-visible">
 		<Header />
 

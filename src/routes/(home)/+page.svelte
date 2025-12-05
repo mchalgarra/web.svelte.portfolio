@@ -5,6 +5,7 @@
 	import Experiences from './components/Experiences.svelte';
 	import MainSkills from './components/MainSkills.svelte';
 	import Resume from './components/Resume.svelte';
+	import Footer from '../../lib/components/layout/Footer.svelte';
 
 	onMount(() => {
 		handleScroll();
@@ -37,7 +38,7 @@
 
 		// Get memphis elements
 
-		const memphisElements = document.querySelectorAll<HTMLElement>('.memphi');
+		const memphisElements = document.querySelectorAll<HTMLElement>('.memphi:not(.ignore-movement)');
 		if (memphisElements.length === 0) return;
 
 		// Move memphis
@@ -74,7 +75,7 @@
 
 	<Resume />
 
-	<div class="min-h-screen h-screen w-full"></div>
+	<Footer />
 </div>
 
 <style lang="scss">

@@ -8,7 +8,9 @@ export default {
 		},
 		screens: {
 			sm: '660px',
-			md: '790px'
+			md: '790px',
+			lg: '1024px',
+			xl: '1280px'
 		},
 		extend: {
 			backgroundColor: {
