@@ -2,6 +2,7 @@
 	import '../app.scss';
 	import type { Snippet } from 'svelte';
 	import Header from '../lib/components/layout/Header.svelte';
+	import Footer from '../lib/components/layout/Footer.svelte';
 
 	let { children }: { children: Snippet } = $props();
 </script>
@@ -11,6 +12,8 @@
 		<Header />
 
 		{@render children()}
+
+		<Footer />
 	</div>
 </main>
 

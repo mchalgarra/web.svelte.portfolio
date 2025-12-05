@@ -5,7 +5,6 @@
 	import Experiences from './components/Experiences.svelte';
 	import MainSkills from './components/MainSkills.svelte';
 	import Resume from './components/Resume.svelte';
-	import Footer from '../../lib/components/layout/Footer.svelte';
 
 	onMount(() => {
 		handleScroll();
@@ -74,8 +73,6 @@
 	<Experiences />
 
 	<Resume />
-
-	<Footer />
 </div>
 
 <style lang="scss">
