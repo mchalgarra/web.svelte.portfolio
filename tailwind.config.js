@@ -7,6 +7,8 @@ export default {
 			display: ['Red Hat Display', 'sans-serif']
 		},
 		screens: {
+			xxs: '400px',
+			xs: '480px',
 			sm: '660px',
 			md: '790px',
 			lg: '1024px',
@@ -33,6 +35,10 @@ export default {
 			},
 			borderColor: {
 				inverted: '#18141F'
+			},
+			backgroundImage: {
+				contactEmail:
+					'linear-gradient(135deg, #669EFF 0%, #669EFF00 22%, #A6D59000 48%, #A6D590 100%)'
 			}
 		}
 	},

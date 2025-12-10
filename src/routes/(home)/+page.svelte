@@ -5,6 +5,7 @@
 	import Experiences from './components/Experiences.svelte';
 	import MainSkills from './components/MainSkills.svelte';
 	import Resume from './components/Resume.svelte';
+	import Contact from './components/Contact.svelte';
 
 	onMount(() => {
 		handleScroll();
@@ -71,6 +72,8 @@
 	<MainSkills />
 
 	<Experiences />
+
+	<Contact />
 
 	<Resume />
 </div>

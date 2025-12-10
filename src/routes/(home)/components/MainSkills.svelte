@@ -6,7 +6,7 @@
 
 <div
 	id="Skills"
-	class="relative flex flex-col gap-16 max-sm:gap-8 min-h-screen w-full pt-24 sm:pt-48"
+	class="relative flex flex-col justify-center items-center gap-16 max-sm:gap-8 h-screen max-h-[1600px] w-full pt-12"
 >
 	<h1 class="text-100 text-6xl max-sm:text-4xl font-bold text-center m-0">Main Skills</h1>
 
