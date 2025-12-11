@@ -1,6 +1,4 @@
 <script lang="ts">
-	import MemphiCoin from '$lib/components/memphis/MemphiCoin.svelte';
-	import MemphiTripleWaves from '$lib/components/memphis/MemphiTripleWaves.svelte';
 	import Tag from '$lib/components/shared/Tag.svelte';
 	import Blob3 from '../../../lib/components/blobs/Blob3.svelte';
 	import MemphiTriplePlus from '../../../lib/components/memphis/MemphiTriplePlus.svelte';
