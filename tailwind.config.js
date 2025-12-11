@@ -31,7 +31,18 @@ export default {
 				primary: '#B5B3FF',
 				accent: '#A6D590',
 				highlight: '#669EFF',
-				shade: '#402A9B'
+				shade: '#402A9B',
+
+				// Projects
+				vaner: '#9235BD',
+				cloudQuiz: '#66BBEE',
+				cloudQuiz2: '#D4FF7A',
+				satnogs: '#30ABD1',
+				satnogs2: '#592384',
+				portfolio: '#669EFF',
+				asteroids: '#FF9C41',
+				beefor: '#F18A00',
+				paperbook: '#3D99C2'
 			},
 			borderColor: {
 				inverted: '#18141F'

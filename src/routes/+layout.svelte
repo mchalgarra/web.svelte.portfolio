@@ -37,7 +37,7 @@
 			align-items: center;
 
 			width: 100%;
-			max-width: 77.5rem;
+			max-width: 80rem;
 		}
 	}
 </style>
