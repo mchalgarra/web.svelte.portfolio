@@ -11,7 +11,7 @@
 	id="Resume"
 	class="relative flex flex-col justify-center items-center gap-32 max-sm:gap-8 h-screen max-h-[1600px] w-full pt-12 px-6"
 >
-	<h1 class="text-100 text-6xl max-sm:text-4xl font-bold text-center m-0">My Resume</h1>
+	<h1 class="text-100 text-6xl max-sm:text-4xl font-bold text-center m-0 z-[1]">My Resume</h1>
 
 	<div class="relative w-full overflow-visible">
 		<Blob1

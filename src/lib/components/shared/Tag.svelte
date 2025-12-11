@@ -1,7 +1,13 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	const { children, color = 'var(--pfl-accent)' }: { children: Snippet; color?: string } = $props();
+	interface IProps {
+		children: Snippet;
+		color?: string;
+		alternative?: boolean;
+	}
+
+	const { children, color = 'var(--pfl-accent)', alternative = false }: IProps = $props();
 </script>
 
 <div
@@ -10,5 +16,10 @@
 >
 	{@render children()}
 
-	<div class="absolute h-full w-full rounded-xl opacity-10" style="background-color: {color}"></div>
+	<div
+		class="absolute h-full w-full rounded-xl {alternative
+			? 'border-[1px] border-accent'
+			: 'opacity-10'}"
+		style="background-color: {alternative ? 'transparent' : color}"
+	></div>
 </div>

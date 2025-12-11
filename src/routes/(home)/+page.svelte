@@ -6,6 +6,7 @@
 	import MainSkills from './components/MainSkills.svelte';
 	import Resume from './components/Resume.svelte';
 	import Contact from './components/Contact.svelte';
+	import Expertise from './components/Expertise.svelte';
 
 	onMount(() => {
 		handleScroll();
@@ -68,6 +69,8 @@
 	<Home />
 
 	<Logos />
+
+	<Expertise />
 
 	<MainSkills />
 
