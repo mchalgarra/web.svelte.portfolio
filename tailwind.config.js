@@ -38,7 +38,8 @@ export default {
 			},
 			backgroundImage: {
 				contactEmail:
-					'linear-gradient(135deg, #669EFF 0%, #669EFF00 22%, #A6D59000 48%, #A6D590 100%)'
+					'linear-gradient(135deg, #669EFF 0%, #669EFF00 22%, #A6D59000 48%, #A6D590 100%)',
+				expertise: 'linear-gradient(135deg, #384078 0%, #3b3153 36%, #333246 62%, #697e63 100%)'
 			}
 		}
 	},
