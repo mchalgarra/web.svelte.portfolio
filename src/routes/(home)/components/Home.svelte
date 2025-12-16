@@ -1,6 +1,18 @@
 <script lang="ts">
 	import ScrollIcon from '../../../lib/components/icons/Scrolling.svelte';
+	import MainVector from '../../../lib/components/MainVector.svelte';
+
+	let scroll = $state(0);
+
+	$effect(() => {
+		const mainVector = document.querySelector('.main-vector') as SVGElement;
+		if (mainVector) {
+			mainVector.style.setProperty('--scroll', `${scroll / 5}px`);
+		}
+	});
 </script>
+
+<svelte:window on:scroll={() => (scroll = window.scrollY)} />
 
 <div
 	class="relative h-screen max-h-[1600px] w-full flex flex-col items-center justify-center overflow-visible home"
@@ -15,11 +27,7 @@
 		style="border-radius: 50%"
 	></div>
 
-	<img
-		src="temp_orb.png"
-		alt="energy orb"
-		class="size-[150vw] sm:size-[75vh] sm:-translate-y-8 mix-blend-lighten object-cover"
-	/>
+	<MainVector className="main-vector size-[180vw] sm:size-[100vh]" />
 
 	<div class="flex flex-col items-center gap-3 absolute bottom-36 sm:bottom-32 md:bottom-44">
 		<h1 class="text-100 uppercase text-center font-bold text-3xl sm:text-5xl md:text-6xl">
@@ -44,5 +52,9 @@
 <style lang="scss">
 	.home {
 		background: radial-gradient(circle, var(--pfl-light) 0%, #18141f00 80%);
+	}
+
+	:global(.main-vector) {
+		transform: translateY(var(--scroll));
 	}
 </style>
