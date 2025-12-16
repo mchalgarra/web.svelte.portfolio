@@ -20,7 +20,7 @@
 		<img
 			src="work/satnogs.png"
 			alt="SatNogs"
-			class="w-1/2 h-1/2 object-cover z-[1] overflow-visible"
+			class="w-4/5 h-4/5 object-contain z-[1] overflow-visible"
 		/>
 	</div>
 

@@ -22,7 +22,7 @@
 		<img
 			src="work/cloud-quiz.png"
 			alt="Cloud Quiz Generator"
-			class="w-2/3 h-2/3 object-cover z-[1] overflow-visible"
+			class="w-2/3 h-2/3 object-contain z-[1] overflow-visible"
 		/>
 	</div>
 
