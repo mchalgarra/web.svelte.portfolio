@@ -15,7 +15,7 @@
 <svelte:window on:scroll={() => (scroll = window.scrollY)} />
 
 <div
-	class="relative h-screen max-h-[1600px] w-full flex flex-col items-center justify-center overflow-visible home"
+	class="relative min-h-[800px] h-screen max-h-[1600px] w-full flex flex-col items-center justify-center overflow-visible home"
 >
 	<div
 		class="absolute top-0 left-1/2 w-full h-20 md:h-[160px] max-w-[1240px] opacity-90 md:opacity-50 filter blur-3xl bg-shade z-0 -translate-x-1/2"

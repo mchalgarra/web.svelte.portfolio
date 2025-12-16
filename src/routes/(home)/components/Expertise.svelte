@@ -9,7 +9,7 @@
 
 <div
 	id="Expertise"
-	class="relative flex flex-col justify-center items-center gap-32 max-sm:gap-8 max-lg:min-h-screen lg:h-screen lg:max-h-[1600px] w-full max-xs:pb-20 pt-20 lg:pt-12 px-6"
+	class="relative flex flex-col justify-center items-center gap-32 max-sm:gap-8 min-h-fit lg:h-screen lg:max-h-[1600px] w-full max-xs:pb-20 pt-20 lg:pt-12 px-6"
 >
 	<h1 class="text-100 text-6xl max-sm:text-4xl font-bold text-center m-0 z-[1]">My Expertise</h1>
 
