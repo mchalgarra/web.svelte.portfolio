@@ -13,6 +13,8 @@
 
 		{@render children()}
 
+		<div class="max-sm:hidden mt-20"></div>
+
 		<Footer />
 	</div>
 </main>

@@ -34,12 +34,10 @@
 				Algarra Barros
 			</h3>
 
-			<span class="text-light text-2xl max-sm:text-xl font-medium my-4"
-				>Software Engineer @ Uber</span
-			>
+			<span class="text-light text-2xl max-sm:text-xl font-medium my-4">Software Engineer</span>
 
 			<p class="text-100">
-				Versatile software engineer with <b>4+</b> years of experience delivering high-impact solutions.
+				Versatile software engineer with <b>5+</b> years of experience delivering high-impact solutions.
 				Skilled in full-stack development, architecture design, and cross-functional collaboration, with
 				a proven track in optimizing platform performance, driving revenue growth, and implementing scalable,
 				maintainable systems.
