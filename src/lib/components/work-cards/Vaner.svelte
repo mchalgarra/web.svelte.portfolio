@@ -1,6 +1,6 @@
 <script lang="ts">
+	import StatusBadge from '$lib/components/shared/StatusBadge.svelte';
 	import Tag from '$lib/components/shared/Tag.svelte';
-	import Chevron from '../icons/Chevron.svelte';
 	import Logo from '../icons/Logo.svelte';
 	import MemphiDots from '../memphis/MemphiDots.svelte';
 	import VanerVector from '../work-vectors/VanerVector.svelte';
@@ -24,8 +24,12 @@
 	</div>
 
 	<div
-		class="flex flex-col w-full md:w-1/2 gap-3 max-md:gap-4 p-4 sm:p-6 md:pt-12 z-[1] max-md:bg-accent"
+		class="flex flex-col w-full md:w-1/2 gap-3 max-md:gap-4 p-4 sm:p-6 md:pt-10 z-[1] max-md:bg-accent"
 	>
+		<StatusBadge className="bg-accent text-vaner max-md:bg-vaner max-md:text-accent">
+			No longer available
+		</StatusBadge>
+
 		<h2
 			class="text-100 max-md:text-vaner text-2xl max-xs:text-xl font-bold font-display w-full m-0"
 		>
@@ -51,7 +55,7 @@
 			platform.
 		</p>
 
-		<div class="flex items-center justify-between w-full mt-auto">
+		<div class="flex items-center justify-between gap-4 w-full mt-auto">
 			<div class="flex items-center gap-2">
 				<div class="size-6">
 					<Logo white />
@@ -60,16 +64,9 @@
 				<b class="text-accent max-md:text-vaner">Personal</b>
 			</div>
 
-			<a
-				href="https://vaner.xtendcode.com"
-				target="_blank"
-				class="text-accent max-md:text-vaner flex items-center gap-2 font-medium hover:translate-x-[0.25rem] transition-all text-right"
-			>
-				Check it out!
-				<div class="size-4">
-					<Chevron className="text-accent max-md:text-vaner" />
-				</div>
-			</a>
+			<span class="text-accent max-md:text-vaner text-sm italic font-medium text-right">
+				This app has been discontinued
+			</span>
 		</div>
 	</div>
 </div>

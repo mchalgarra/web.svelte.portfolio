@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Celebrio from '../../../lib/components/work-cards/Celebrio.svelte';
 	import CloudQuiz from '../../../lib/components/work-cards/CloudQuiz.svelte';
 	import Generic from '../../../lib/components/work-cards/Generic.svelte';
 	import SatNogs from '../../../lib/components/work-cards/SatNogs.svelte';
@@ -14,19 +15,21 @@
 	<h1 class="text-100 text-6xl max-sm:text-4xl font-bold text-center m-0 z-[1]">Work</h1>
 
 	<div class="flex flex-col items-center gap-16 max-md:gap-12 sm:mt-8 px-6 w-full z-[1]">
-		<Vaner />
+		<Celebrio />
 
 		<div class="flex justify-center items-center gap-16 w-full max-md:flex-col max-md:gap-12">
 			<Generic data={PORTFOLIO} />
 			<Generic data={ASTEROIDS} />
 		</div>
 
-		<SatNogs />
+		<Vaner />
 
 		<div class="flex justify-center items-center gap-16 w-full max-md:flex-col max-md:gap-12">
 			<Generic data={BEEFOR} />
 			<Generic data={PAPERBOOK} />
 		</div>
+
+		<SatNogs />
 
 		<CloudQuiz />
 	</div>
