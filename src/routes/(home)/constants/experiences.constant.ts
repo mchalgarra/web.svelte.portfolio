@@ -6,7 +6,7 @@ export const EXPERIENCES: IExperience[] = [
 		title: 'Software Engineer',
 		type: 'Full-time',
 		startDate: 'Aug 2024',
-		endDate: 'Current',
+		endDate: 'Sep 2026',
 		tags: ['React', 'TypeScript', 'Go', 'Kotlin'],
 		description: [
 			'Worked on cross-platform projects that unlocked over <b>$34M</b> in revenue',

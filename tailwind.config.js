@@ -34,6 +34,9 @@ export default {
 				shade: '#402A9B',
 
 				// Projects
+				celebrio: '#EF7A85',
+				celebrio2: '#B8325E',
+				celebrio3: '#FDF1EF',
 				vaner: '#9235BD',
 				cloudQuiz: '#66BBEE',
 				cloudQuiz2: '#D4FF7A',
